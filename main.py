@@ -105,7 +105,7 @@ def health() -> Dict[str, Any]:
     problem = validate_llm_config()
     return {
         "status": "ok" if problem is None else "degraded",
-        "llm_provider": os.getenv("LLM_PROVIDER", "openai"),
+        "llm_provider": os.getenv("LLM_PROVIDER", "groq"),
         "llm_configured": problem is None,
         "llm_problem": problem,
         "search": "tavily+duckduckgo" if os.getenv("TAVILY_API_KEY") else "duckduckgo",

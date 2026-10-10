@@ -47,7 +47,7 @@ _KEY_VARS = {
 
 
 def _provider() -> str:
-    return os.getenv("LLM_PROVIDER", "openai").strip().lower()
+    return os.getenv("LLM_PROVIDER", "groq").strip().lower()
 
 
 def validate_llm_config() -> Optional[str]:
@@ -99,7 +99,7 @@ def get_llm(temperature: Optional[float] = None, max_tokens: Optional[int] = Non
         from langchain_groq import ChatGroq
 
         return ChatGroq(
-            model=os.getenv("GROQ_MODEL", "qwen/qwen3.8-27b"),
+            model=os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile"),
             temperature=temperature,
             timeout=timeout,
             max_retries=2,
@@ -641,7 +641,7 @@ def writer_node(state: ResearchState) -> Dict[str, Any]:
     )
 
     try:
-        llm = get_llm(temperature=0.3, max_tokens=8000)
+        llm = get_llm(temperature=0.3, max_tokens=4096)
         raw = llm.invoke([SystemMessage(content=system), HumanMessage(content=user)])
         report = _message_text(raw).strip()
         report = re.sub(r"^```(?:markdown|md)?\s*\n|\n```\s*$", "", report).strip()
