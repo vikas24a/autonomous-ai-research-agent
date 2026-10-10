@@ -1,0 +1,36 @@
+# --- Orchestration ---
+langgraph==0.6.7
+langchain==0.3.27
+langchain-core==0.3.74
+langchain-community==0.3.27
+langchain-text-splitters==0.3.9
+
+# --- LLM providers (configurable via LLM_PROVIDER) ---
+langchain-openai==0.3.32
+langchain-anthropic==0.3.19
+langchain-groq==0.3.7
+
+# --- Search ---
+tavily-python==0.7.11
+duckduckgo-search==8.1.1
+
+# --- Scraping / HTTP ---
+requests==2.32.4
+beautifulsoup4==4.13.4
+
+# --- Vector store / embeddings ---
+faiss-cpu
+numpy==2.2.6
+fastembed==0.7.1
+
+# --- Backend ---
+fastapi==0.116.1
+uvicorn[standard]==0.35.0
+pydantic==2.11.7
+
+# --- Frontend ---
+streamlit==1.48.1
+fpdf2==2.8.3
+
+# --- Config ---
+python-dotenv==1.1.1
