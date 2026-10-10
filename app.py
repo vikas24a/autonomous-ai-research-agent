@@ -15,7 +15,7 @@ from fpdf import FPDF
 
 load_dotenv()
 
-DEFAULT_API_URL = os.getenv("API_URL", "http://localhost:8000")
+DEFAULT_API_URL = os.getenv("API_URL", "https://autonomous-ai-research-agent-s6j0.onrender.com")
 STEPS = [
     ("planner", "🧭 Planner"),
     ("researcher", "🔎 Researcher"),
