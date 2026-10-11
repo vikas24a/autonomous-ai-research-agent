@@ -494,7 +494,7 @@ def format_log_line(log: Dict[str, Any]) -> str:
 
 def check_backend(api_url: str) -> Dict[str, Any]:
     try:
-        resp = requests.get(f"{api_url.rstrip('/')}/health", timeout=5)
+        resp = requests.get(f"{api_url.rstrip('/')}/health", timeout=60)
         resp.raise_for_status()
         return resp.json()
     except Exception as exc:  # noqa: BLE001
